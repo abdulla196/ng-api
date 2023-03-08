@@ -37,6 +37,7 @@ router.get(`/`, async (req, res) => {
     }
 
     const productList = await Product.find(filter).populate('category');
+    // .distinct("name");
 
     if (!productList) {
         res.status(500).json({ success: false });
